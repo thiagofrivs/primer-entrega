@@ -7,7 +7,7 @@ function App() {
   return (
     <div>
       <Navbar/>
-      <ItemListContainer/>
+      <ItemListContainer greeting="Esto es un párrafo."/>
     </div>
   );
 }

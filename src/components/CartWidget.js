@@ -1,6 +1,6 @@
 import React from "react";
 
-function CartIcon(){
+function CartWidget(){
     return (
         <div>
             <i class="bi bi-cart">0</i>
@@ -9,4 +9,4 @@ function CartIcon(){
     )
 } 
 
-export default CartIcon
+export default CartWidget
