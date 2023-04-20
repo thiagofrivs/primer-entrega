@@ -23,7 +23,7 @@ body{
 }
 
 .agregar{
-  background-color: grey;
+  background-color: rgb(167, 165, 165);
   color: white ;
   justify-content: center;
 }
@@ -55,6 +55,8 @@ body{
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-top: 4rem;
+  justify-content: center;
 }
 
 .list{
@@ -66,3 +68,87 @@ body{
   background-color: grey;
 }
 
+.center{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.disabled{
+  display: none;
+}
+
+.vacio{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  font-size: 3rem;
+}
+
+.navbar{
+  position:fixed;
+  width: 100vw;
+}
+
+.flex-cont{
+  width: 100%;
+}
+
+.img{
+  width: 8rem;
+}
+
+.pad{
+  padding-top: 6rem;
+}
+
+.boton{
+  background-color: rgb(31, 7, 54);
+  color: white;
+  border: none;
+}
+
+.botones{
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+}
+
+.botones-cart{
+  background-color: rgb(31, 7, 54);
+  color: white;
+  padding: 1rem;
+  border: 1px solid white;
+}
+
+.full{
+  padding-top: 5rem;
+  gap: 3rem;
+  flex-direction: column;
+}
+
+.comprado{
+  color: white;
+}
+
+form{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items:flex-end;
+  color: white;
+  gap:4 rem;
+}
+
+form >div{
+  display: flex;
+  gap: 1rem;
+  font-size: 1.2rem;
+}
+
+.id{
+  margin-top: 2rem;
+}

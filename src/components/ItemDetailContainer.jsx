@@ -2,37 +2,46 @@ import React from "react";
 import { useEffect, useState, } from "react";
 import { useParams } from "react-router-dom";
 import ItemDetail from "./ItemDetail";
-import productos from "./Json/productos.json";
+import { getDocs, collection } from "firebase/firestore";
+import { db } from "./ItemListContainer";
+
 
 
 const ItemDetailContainer = () => {
 
-    console.log('hola')
-
     const [item, setItem] = useState({});
-    const {id} = useParams();
+    const { id } = useParams();
+
+
+
 
     useEffect(() => {
-        const promesa = new Promise((resolve) => {
-            console.log(id);
-            setTimeout(() => {
-                resolve(productos.find(item => item.id  === parseInt(id)))
-            }, 0);
-        }, []);
+        const getProducts = async () => {
+            try {
+                const querySnapshot = await getDocs(collection(db, 'items'))
+                const docs = []
+                querySnapshot.forEach((doc) => {
+                    docs.push({ ...doc.data(), id: doc.id })
 
-        promesa.then((data) => {
-            console.log(data)
-            setItem(data);
-        })
+                })
+                setItem(docs.find(item => item.id === id))
 
-    }, [id])
+            }
+            catch (error) {
+                console.log(error)
+            }
+        }
+        getProducts()
+    }, [id]);
 
 
-    return(
-        
+
+
+    return (
+
         <div className="container">
             <ItemDetail item={item} />
-        </div> 
+        </div>
 
     )
 }

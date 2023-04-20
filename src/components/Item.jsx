@@ -5,11 +5,11 @@ const Item = ({item}) => {
     return (
         <Link to={"/item/" + item.id} className="text-decoration-none" >
             <div className="container">
-                <div className="card  border ">
-                    <img src={item.imagen} className="card-img-top" alt={item.nombre} />
+                <div className="card border">
+                    <img src={item.img} className="card-img-top" alt={item.title} />
                     <div className="card-body text-center ">
-                        <p className="card-text ">{item.nombre} </p>
-                        <p>$ {item.precio}</p>
+                        <p className="card-text ">{item.title} </p>
+                        <p>$ {item.price}</p>
                     </div>
                 </div>
             </div>
